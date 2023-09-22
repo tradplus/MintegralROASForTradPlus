@@ -5,7 +5,7 @@
 ```
 #import <TradPlusAds/TradPlusAds.h>
 #import <MTGSDK/MTGTrackAdRevenue.h>
-#import<MTGSDK/MTGSDK.h>
+#import <MTGSDK/MTGSDK.h>
 
 //初始化MTGSDK
 [[MTGSDK sharedInstance] setAppID:appid ApiKey:appkey];
