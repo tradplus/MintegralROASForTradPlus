@@ -168,6 +168,20 @@ public class MBridgeRevenueManager
 
 #endif
 #endif
+#if TradPlus
+            dic.Add("mediationName", mediationName.TradPlus.ToString());
+            dic.Add("tpAdInfo", mBridgeRevenueParamsEntity.tpAdInfo);
+            var tpJsonStr = ROSA.ThirdParty.MiniJson.Json.Serialize(dic);
+            if (MUnityDataSendBridge.getInstance().isDebug)
+                Debug.Log("ROAS  TradPlus Ad JSON" + tpJsonStr);
+#if UNITY_IOS || UNITY_IPHONE
+            _trackAdRevenueWithAdRevenueModel(tpJsonStr);
+
+#elif UNITY_ANDROID
+
+            MUnityDataSendBridge.getInstance().trackAdRevenue(maxJsonStr);
+#endif
+#endif
 
         }
         catch (System.Exception ex)
@@ -186,5 +200,6 @@ public enum mediationName
 {
     Max,
     Admob,
-    IronSource
+    IronSource,
+    TradPlus
 }

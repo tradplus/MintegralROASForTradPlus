@@ -17,7 +17,7 @@ extern "C" {
 static NSString *const kMTG_Mediation_Admob = @"Admob";
 static NSString *const kMTG_Mediation_IronSource = @"IronSource";
 static NSString *const kMTG_Mediation_Max = @"Max";
-
+static NSString *const kMTG_Mediation_TradPlus = @"TradPlus";
 
 
 
@@ -63,8 +63,15 @@ static NSString *const kMTG_max_Credentials = @"Credentials";
 static NSString *const kMTG_max_IsBidding = @"IsBidding";
 static NSString *const kMTG_max_DspName = @"DspName";
 
-
-
+//tradplus key
+static NSString *const kMTG_tradplus_adInfo = @"tpAdInfo";
+static NSString *const kMTG_tradplus_adunit_id = @"adunit_id";
+static NSString *const kMTG_tradplus_adType = @"adType";
+static NSString *const kMTG_tradplus_adsource_name = @"adsource_name";
+static NSString *const kMTG_tradplus_ecpm_precision = @"ecpm_precision";
+static NSString *const kMTG_tradplus_ecpm = @"ecpm";
+static NSString *const kMTG_tradplus_request_id = @"request_id";
+static NSString *const kMTG_tradplus_adsource_placement_id = @"adsource_placement_id";
 
 static bool debug = false;
 static bool mtg_check_nsstring(NSString *arg) {
@@ -192,8 +199,22 @@ static bool mtg_check_dict(NSDictionary *arg) {
                     customModel.dspName = adInfo[kMTG_max_DspName];//ad.DSPName;
                     
                 }
-              
-                
+            }
+            else if([mediationName isEqualToString:kMTG_Mediation_TradPlus])
+            {
+                NSDictionary *tpAdInfo = dics[kMTG_tradplus_adInfo];
+                if(mtg_check_dict(tpAdInfo))
+                {
+                    customModel.mediationUnitId = tpAdInfo[kMTG_tradplus_adunit_id];
+                    customModel.adType = tpAdInfo[kMTG_tradplus_adType];
+                    customModel.adNetworkName = tpAdInfo[kMTG_tradplus_adsource_name];
+                    customModel.precision = tpAdInfo[kMTG_tradplus_ecpm_precision];
+                    CGFloat revenue = [tpAdInfo[kMTG_tradplus_ecpm] floatValue]/1000.0;
+                    customModel.revenue = @(revenue);
+                    NSString *instanceId = [NSString stringWithFormat:@"%@%@",tpAdInfo[kMTG_tradplus_request_id],tpAdInfo[kMTG_tradplus_adsource_placement_id]];
+                    customModel.adNetworkUnitInfo = @{@"instanceId":instanceId};
+                    customModel.dspName = @"";
+                }
             }
         }
        // customModel.dspId =@"";

@@ -94,6 +94,14 @@ public class MBridgeRevenueParamsEntity
     }
 #endif
     #endregion
+#if TradPlus
+    public Dictionary<string, object> tpAdInfo = null;
+
+    public void SetTradPlusAdInfo(Dictionary<string, object> adInfo)
+    {
+        this.tpAdInfo = adInfo;
+    }
+#endif
 
     public MBridgeRevenueParamsEntity(string attributionPlatformName, string attributionPlatformUserId)
     {
