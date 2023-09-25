@@ -2,7 +2,7 @@
 
 #### iOS 
 
-- 在收到TP展示回调后向Mintegral ROAS 设置方法如下：
+在收到TP展示回调后向Mintegral ROAS 设置方法如下：
 
 ```
 #import <TradPlusAds/TradPlusAds.h>
