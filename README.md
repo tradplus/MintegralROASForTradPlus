@@ -52,7 +52,7 @@
 ```
 void Start()
 {
-    ////初始化MTGSDK
+    //初始化MTGSDK
     MBridgeSDKManager.initialize(mtgAppId, mtgAppKey);
     //初始化TPSDK
     TradplusAds.Instance().InitSDK(appId);
