@@ -9,10 +9,10 @@ using System;
 public class MainUI : MonoBehaviour
 {
 #if UNITY_ANDROID
-    string adUnitId = "";
-    string appId = "";
-    string mtgAppId = "";
-    string mtgAppKey = "";
+    string adUnitId = "788E1FCB278B0D7E97282231154458B7";
+    string appId = "6640E7E3BDAC951B8F28D4C8C50E50B5";
+    string mtgAppId = "144002";
+    string mtgAppKey = "7c22942b749fe6a6e361b675e96b3ee9";
 #else
     string adUnitId = "580EA72031574148726E8BD5C2EB43D6";
     string appId = "DB6D75719E469134132D4490CA557A3E";

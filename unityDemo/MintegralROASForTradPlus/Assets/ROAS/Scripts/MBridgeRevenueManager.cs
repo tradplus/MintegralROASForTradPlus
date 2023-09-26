@@ -179,7 +179,7 @@ public class MBridgeRevenueManager
 
 #elif UNITY_ANDROID
 
-            MUnityDataSendBridge.getInstance().trackAdRevenue(maxJsonStr);
+            MUnityDataSendBridge.getInstance().trackAdRevenue(tpJsonStr);
 #endif
 #endif
 
