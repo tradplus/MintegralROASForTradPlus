@@ -2,6 +2,10 @@
 
 #### Unity 
 
+此插件在[Mintegral ROAS Unity插件](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-unity&lang=cn)的基础上支持了TradPlus聚合
+
+#### 使用方法
+
 1.项目中导入 mintegral_roas_for_tradplus.untiypage 
 
 2.在 Mintegral 菜单中选择 TradPlus ，根据使用平台都需要选择一次 （可参考 settingRes下的截图）
