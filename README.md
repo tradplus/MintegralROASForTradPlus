@@ -1,7 +1,8 @@
 # MintegralROASForTradPlus
 
 #### Unity 
-1.项目中导入.untiypage 
+
+1.项目中导入 mintegral_roas_for_tradplus.untiypage 
 
 2.在 Mintegral 菜单中选择 TradPlus ，每个平台都需要选择一次 （可参考 settingRes下的截图）
 
