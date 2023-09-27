@@ -12,7 +12,7 @@ Android平台设置如下设置
 
 iOS平台设置如下设置
 
-![](https://github.com/tradplus/MintegralROASForTradPlus/blob/main/settingRes/iOSSetting.jpg?raw=true)]
+![](https://github.com/tradplus/MintegralROASForTradPlus/blob/main/settingRes/iOSSetting.jpg?raw=true)
 
 3.在收到TP展示后调用Mintegral ROAS 设置方法（可参考 unityDemo）
  
