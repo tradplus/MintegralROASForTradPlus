@@ -34,9 +34,9 @@
     customModel.precision = adInfo[@"ecpm_precision"];
     CGFloat revenue = [adInfo[@"ecpm"] floatValue]/1000.0;
     customModel.revenue = @(revenue);
-    NSString *instanceId = [NSString stringWithFormat:@"%@%@",adInfo[@"request_id"],adInfo[@"adsource_placement_id"]];
-    customModel.adNetworkUnitInfo = @{@"instanceId":instanceId};
-     
+    NSString *adsource_placement_id = [NSString stringWithFormat:@"%@",tpAdInfo[kMTG_tradplus_adsource_placement_id]];
+                    customModel.adNetworkUnitInfo = @{@"adsource_placement_id":adsource_placement_id};
+         
     [MTGTrackAdRevenue trackAdRevenueWithAdRevenueModel:customModel];
 }
 
