@@ -70,7 +70,7 @@ static NSString *const kMTG_tradplus_adType = @"adType";
 static NSString *const kMTG_tradplus_adsource_name = @"adsource_name";
 static NSString *const kMTG_tradplus_ecpm_precision = @"ecpm_precision";
 static NSString *const kMTG_tradplus_ecpm = @"ecpm";
-static NSString *const kMTG_tradplus_adsource_placement_id = @"adsource_placement_id";
+static NSString *const kMTG_tradplus_placementid = @"placementid";
 
 static bool debug = false;
 static bool mtg_check_nsstring(NSString *arg) {
@@ -210,8 +210,11 @@ static bool mtg_check_dict(NSDictionary *arg) {
                     customModel.precision = tpAdInfo[kMTG_tradplus_ecpm_precision];
                     CGFloat revenue = [tpAdInfo[kMTG_tradplus_ecpm] floatValue]/1000.0;
                     customModel.revenue = @(revenue);
-                    NSString *adsource_placement_id = [NSString stringWithFormat:@"%@",tpAdInfo[kMTG_tradplus_adsource_placement_id]];
-                    customModel.adNetworkUnitInfo = @{@"adsource_placement_id":adsource_placement_id};
+                    if([tpAdInfo valueForKey:kMTG_tradplus_placementid])
+                    {
+                        NSString *placementId = [NSString stringWithFormat:@"%@",tpAdInfo[kMTG_tradplus_placementid]];
+                        customModel.adNetworkUnitInfo = @{@"placementId":placementId};
+                    }
                     customModel.dspName = @"";
                 }
             }
